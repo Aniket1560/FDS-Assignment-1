@@ -12,14 +12,14 @@ echo "Injecting network partition to Node 2..."
 
 # Simulate a node crash (up to 2 nodes for Mode A) 
 echo "Simulating crash on Node 3 and Node 4..."
-docker stop distributed-consensus-engine_node3_1
-docker stop distributed-consensus-engine_node4_1
+docker stop distributed-consensus-engine-node3-1
+docker stop distributed-consensus-engine-node4-1
 
 sleep 10
 
 # Recover nodes
 echo "Recovering crashed nodes..."
-docker start distributed-consensus-engine_node3_1
-docker start distributed-consensus-engine_node4_1
+docker start distributed-consensus-engine-node3-1
+docker start distributed-consensus-engine-node4-1
 
 echo "Chaos test sequence complete."
