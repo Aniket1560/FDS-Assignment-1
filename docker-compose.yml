@@ -1,0 +1,42 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  node1:
+    build: .
+    environment:
+      - NODE_ID=1
+      - MODE=A
+  node2:
+    build: .
+    environment:
+      - NODE_ID=2
+      - MODE=A
+  node3:
+    build: .
+    environment:
+      - NODE_ID=3
+      - MODE=A
+  node4:
+    build: .
+    environment:
+      - NODE_ID=4
+      - MODE=A
+  node5:
+    build: .
+    environment:
+      - NODE_ID=5
+      - MODE=A
+  adversary:
+    build: .
+    command: ["python", "src/adversary.py"]
+    environment:
+      - NODE_ID=6
+      - MODE=B
+  client:
+    build: .
+    command: ["python", "src/client.py"]
+  toxiproxy:
+    image: ghcr.io/shopify/toxiproxy
+    ports:
+      - "8474:8474"
