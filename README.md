@@ -2,6 +2,8 @@
 
 This repository contains a resilient distributed state machine capable of enduring both benign (crash) faults and malicious (Byzantine) faults. The system is designed to maintain a consistent, append-only transaction ledger across a cluster of 5 nodes.
 
+Video Link : https://youtu.be/z84yB7ex_Og
+
 ## Architecture
 The system features two distinct operational modes:
 * **Mode A (Crash-Fault Tolerance):** Utilizes Leader Election and Basic Paxos to withstand up to 2 simultaneous node crashes.
